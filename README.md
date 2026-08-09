@@ -337,8 +337,6 @@ pie showData
 - **DIKW / PBL / OKR / 信息块理论** —— 通用模型
 - [**转了码刘公子**](https://liu-gong-zi.com) —— 整套「第二大脑 + 飞轮」框架的最初启发来源;关于笔记本质与概念组织的[进一步讨论](https://fq6a0001xu.feishu.cn/wiki/AOpEwru1RisVZekiuj0cfPEynlh)
 
-本文中的结构设计、迭代机制与两个配套工具为本人实现。
-
 ---
 
 ## 使用条款
