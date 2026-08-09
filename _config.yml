@@ -1,0 +1,5 @@
+# 根目录没有 index 文件,Jekyll 会自动拿 README.md 当首页。
+theme: jekyll-theme-cayman
+
+title: 第二大脑
+description: 一套持续复写的个人知识系统 · PARA + DIKW + PBL

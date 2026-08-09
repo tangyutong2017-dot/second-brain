@@ -1,0 +1,30 @@
+<!--
+  GitHub 站内 markdown 自带 mermaid 渲染,Jekyll 没有 —— 不加这段,
+  README 里那两张图在 Pages 上会是代码块。
+  cayman 主题的 default 布局留了 head-custom 这个插入点。
+-->
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  // Kramdown 把 ```mermaid 编译成 <pre><code class="language-mermaid">,
+  // 换成 mermaid 认的 <div class="mermaid">
+  for (const code of document.querySelectorAll("code.language-mermaid")) {
+    const holder = document.createElement("div");
+    holder.className = "mermaid";
+    holder.textContent = code.textContent;
+    (code.closest("pre") ?? code).replaceWith(holder);
+  }
+
+  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+</script>
+
+<style>
+  /* 图较宽,窄屏下让它自己横向滚动,别把整页撑破 */
+  .mermaid { overflow-x: auto; }
+
+  /* 两张关系图谱是白底的,加个淡边框免得和页面背景糊在一起 */
+  img[src*="graph-"] {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+  }
+</style>
