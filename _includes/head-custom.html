@@ -22,6 +22,17 @@
   /* 图较宽,窄屏下让它自己横向滚动,别把整页撑破 */
   .mermaid { overflow-x: auto; }
 
+  /* mermaid 生成的 svg 带 height:100%,在打印布局里会塌成 0 高度,
+     导致后面的内容压到图上面。强制 auto。 */
+  .mermaid svg { height: auto !important; max-width: 100% !important; }
+
+  @media print {
+    /* 打印时不要滚动容器,否则超出部分直接被裁掉 */
+    .mermaid { overflow: visible; }
+    .mermaid, .mermaid svg, img, table { break-inside: avoid; page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+  }
+
   /* 两张关系图谱是白底的,加个淡边框免得和页面背景糊在一起 */
   img[src*="graph-"] {
     border: 1px solid rgba(0, 0, 0, 0.08);
